@@ -1,0 +1,1 @@
+# retrofit-models-generation-plugin-for-androis-studio
