@@ -1,0 +1,46 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
+    <id>ru.kpfu.stud.rizrgaripov.NetModuleGeneration</id>
+
+    <!-- Public plugin name should be written in Title Case.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
+    <name>NetModuleGeneration</name>
+
+    <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
+    <vendor email="RizRGaripov@stud.kpfu.ru" url="https://www.yourcompany.com">KFU</vendor>
+
+    <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
+         Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
+    <description>Net Module Generation. The program will allow you to generate template code that interacts with the
+        API in the Kotlin programming language. However, all data can be entered in the UI window without the need for
+        an OpenAPI specification file. The software will create models for Retrofit. At the same time, it will generate
+        models for asynchronous requests.</description>
+
+    <!-- Product and plugin compatibility requirements.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.java</depends>
+    <depends>org.jetbrains.kotlin</depends>
+
+    <!-- Extension points defined by the plugin.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
+    <extensions defaultExtensionNs="com.intellij">
+
+    </extensions>
+    <actions>
+
+        <action id="ru.kpfu.stud.rizrgaripov.netmodulegeneration.netmodule.CreateNetModuleAction"
+                class="ru.kpfu.stud.rizrgaripov.netmodulegeneration.netmodule.CreateNetModuleAction"
+                text="Generate Net Module">
+            <add-to-group group-id="GenerateGroup" anchor="last"/>
+        </action>
+
+        <action id="ru.kpfu.stud.rizrgaripov.netmodulegeneration.netmodule.CreateApiAction"
+                class="ru.kpfu.stud.rizrgaripov.netmodulegeneration.api.CreateApiAction"
+                text="Generate API Request Function">
+            <add-to-group group-id="GenerateGroup" anchor="last"/>
+        </action>
+    </actions>
+</idea-plugin>
